@@ -1,16 +1,15 @@
 bl_info = {
-    "name": "Auto Screenshot Taker",
+    "name": "TimeLens",
     "blender": (2, 80, 0),
     "category": "System",
     "author": "ChatGPT",
     "version": (1, 0),
-    "description": "Periodically takes PNG screenshots without alpha and with 0% compression."
+    "description": "Capture your Blender workspace automatically over time in crisp PNGs."
 }
 
 import bpy
 import os
 import datetime
-import threading
 
 from bpy.props import StringProperty, IntProperty
 from bpy.types import AddonPreferences, Operator
@@ -44,6 +43,7 @@ class SCREEN_OT_auto_screenshot(Operator):
     bl_label = "Start Auto Screenshot"
     bl_description = "Starts taking screenshots periodically"
     _timer = None
+    _handle = None
 
     def modal(self, context, event):
         if event.type == 'TIMER':
@@ -51,6 +51,10 @@ class SCREEN_OT_auto_screenshot(Operator):
         return {'PASS_THROUGH'}
 
     def execute(self, context):
+        if not bpy.data.filepath:
+            self.report({'WARNING'}, "Please save the .blend file first.")
+            return {'CANCELLED'}
+
         wm = context.window_manager
         self._timer = wm.event_timer_add(
             bpy.context.preferences.addons[__name__].preferences.interval_minutes * 60,
@@ -63,7 +67,6 @@ class SCREEN_OT_auto_screenshot(Operator):
     def take_screenshot(self, context):
         prefs = bpy.context.preferences.addons[__name__].preferences
 
-        # Get the output directory
         if prefs.output_directory:
             output_dir = bpy.path.abspath(prefs.output_directory)
         else:
@@ -76,17 +79,17 @@ class SCREEN_OT_auto_screenshot(Operator):
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
         full_path = os.path.join(output_dir, f"{base_filename}_{timestamp}.png")
 
-        # Set screenshot settings
-        bpy.context.preferences.filepaths.image_format = 'PNG'
-        bpy.context.preferences.filepaths.save_png_compression = 0
-        bpy.context.preferences.filepaths.save_png_color_mode = 'RGB'
-
-        bpy.ops.screen.screenshot(filepath=full_path, full=True)
-        print(f"Screenshot saved to: {full_path}")
+        try:
+            # bpy.ops.screen.screenshot(filepath=full_path, full=True)
+            bpy.ops.screen.screenshot(filepath=full_path)
+            self.report({'INFO'}, f"Screenshot saved to: {full_path}")
+        except Exception as e:
+            self.report({'ERROR'}, f"Failed to take screenshot: {str(e)}")
 
     def cancel(self, context):
         wm = context.window_manager
-        wm.event_timer_remove(self._timer)
+        if self._timer:
+            wm.event_timer_remove(self._timer)
         self.report({'INFO'}, "Auto Screenshot Stopped")
         return {'CANCELLED'}
 
