@@ -1,0 +1,4 @@
+*.DS_Store
+/addons/TimeLens/__pycache__
+/blend-files
+/output-folder
