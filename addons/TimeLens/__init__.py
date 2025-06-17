@@ -3,7 +3,7 @@ bl_info = {
     "blender": (2, 80, 0),
     "category": "System",
     "author": "Shinji Pons",
-    "version": (1, 12),
+    "version": (0, 1),
     "description": "Capture your Blender workspace automatically via an N-panel tab and File menu"
 }
 
