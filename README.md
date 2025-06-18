@@ -5,8 +5,19 @@ This simple addon is a quick and easy way to automatically capture your entire c
 ## Features
 (To be written)
 
+### File name scheme
+The naming scheme for the PNG screenshots is very simple:
+
+`{name-of-blend-file} YYYY-MM-DD at HH.MM.SS ({width x height}).png`
+
+A real file example would look something like this:
+
+`Default Cube 2025-06-18 at 18.19.51 (1256x708).png`
+
+It's possible to remove the image dimensions from the filename inside of the addon's preferences.
+
 ## How to install
-(To be written)
+Download the `TimeLens.zip` from the Releases on this repository and install it in Blender like any other add-on.
 
 ## How to use Time Lens in Blender
 (To be written)
@@ -16,3 +27,6 @@ This simple addon is a quick and easy way to automatically capture your entire c
 
 ## How to log issues
 (To be written)
+
+## Licence
+(To be added later, but it will be as permissive as possible)
