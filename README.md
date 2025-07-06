@@ -20,7 +20,7 @@ It's possible to remove the image dimensions from the filename inside of the add
 Download the `TimeLens.zip` from the Releases on this repository and install it in Blender like any other add-on.
 
 ## How to use Time Lens in Blender
-![User Interface](https://github.com/shinjipons/time-lens/repo-assets/n-panel.png)
+![User Interface](https://github.com/shinjipons/Time-Lens/blob/main/repo-assets/n-panel.png?raw=true)
 Once the add-on is installed, simply click on the "Start Time Lens" button to start immediately taking snapshots of your Blender window. To stop taking screenshots, just click on the "Stop Time Lens" button.
 
 You can choose which directory to save the screenshots on a per `.blend` file basis. If left empty, Time Lens will save the screenshots next to where the `.blend` file is saved.
