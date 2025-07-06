@@ -8,10 +8,10 @@ This simple addon is a quick and easy way to automatically capture your entire c
 - All screenshots are saved to the disk in `*.png` format at no compression for the best image quality
 
 ### File name scheme
-The naming scheme for the PNG screenshots is very simple:
+The naming scheme for the PNG screenshots is very simple:<br>
 `{name-of-blend-file} YYYY-MM-DD at HH.MM.SS ({width x height}).png`
 
-A real file example would look something like this:
+A real file example would look something like this:<br>
 `Default Cube 2025-06-18 at 18.19.51 (1256x708).png`
 
 It's possible to remove the image dimensions from the filename inside of the addon's preferences.
