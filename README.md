@@ -51,4 +51,4 @@ Please use Github Issues to submit issues. Please be as descriptive as possible 
 
 ## Licence
 
-This project is released under **CC0 1.0 Universal**. See [LICENSE](./LICENSE) for details.
+This project is released under **CC0 1.0 Universal**. See [LICENSE](./LICENSE.md) for details.
