@@ -28,9 +28,15 @@ You can choose which directory to save the screenshots on a per `.blend` file ba
 
 I recommend to save your Blender file before starting to take screenshots, so that the name of the file is written in the name of the screenshot.
 
-Inside of the addon's user preferences, you can set how frequently you would like Time Lens to take snapshots of your window and if you want to have the image's dimensions included in the filename.
+Inside of the addon's user preferences, you can set how frequently you would like Time Lens to take snapshots of your window and if you want to have the image's dimensions included in the filename. **Warning:** you will have to click on "Start Time Lens" button each time you start Blender.
 
 ![User Preferences](https://github.com/shinjipons/Time-Lens/blob/main/repo-assets/user-prefs.png?raw=true)
+
+## Small Warning
+Taking lossless `.png` screenshots at full size can take quite a lot of space if you leave the addon running for a long time. For example, a screenshot at 1710 x 1069 pixels (a 15" MacBook Air display) can take up to 1.7 MB!
+
+## Tentative Roadmap
+If the Blender API allows it and if enough people request it, I might try to add a way so that you don't have to start the addon manually each session.
 
 ## How to request features
 Time Lens is very much a side project, so requesting features is not guaranteed. However:
