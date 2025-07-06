@@ -49,13 +49,14 @@ def take_screenshot():
 
     full_path = os.path.join(output_dir, f"{name}.png")
 
-        # Ensure PNG, 8-bit RGB, 0% compression using render settings
+    # Ensure PNG, 8-bit RGB, 0% compression using render settings
     scene = bpy.context.scene
     img_set = scene.render.image_settings
     img_set.file_format = 'PNG'
     img_set.color_mode = 'RGB'
     img_set.color_depth = '8'
     img_set.compression = 0
+    
     # Context override: use only window and screen
     for window in bpy.context.window_manager.windows:
         override = {'window': window, 'screen': window.screen}
@@ -182,7 +183,8 @@ class SCREEN_PT_timelens_panel(Panel):
         col2.enabled = running
         col2.operator("timelens.stop_screenshot", text="Stop Time Lens", icon='CANCEL')
         layout.separator()
-        layout.prop(prefs, "output_directory", text="Output Directory")
+        layout.label(text="Output Directory")
+        layout.prop(prefs, "output_directory", text="")
 
 
 def menu_draw(self, context):
