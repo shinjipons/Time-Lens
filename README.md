@@ -6,6 +6,7 @@ This simple addon is a quick and easy way to automatically capture your entire c
 - Easily record a timelapse of your Blender work at a click of a button
 - Access through the N-panel of the 3D viewport or through the File menu if you work outside of the 3D viewport (like in the Compositor or the Shading Editor)
 - All screenshots are saved to the disk in `*.png` format at no compression for the best image quality
+- Change how frequently you want the addon to take snapshots
 
 ### File name scheme
 The naming scheme for the PNG screenshots is very simple:<br>
@@ -27,11 +28,27 @@ You can choose which directory to save the screenshots on a per `.blend` file ba
 
 I recommend to save your Blender file before starting to take screenshots, so that the name of the file is written in the name of the screenshot.
 
+Inside of the addon's user preferences, you can set how frequently you would like Time Lens to take snapshots of your window and if you want to have the image's dimensions included in the filename.
+
+![User Preferences](https://github.com/shinjipons/Time-Lens/blob/main/repo-assets/user-prefs.png?raw=true)
+
 ## How to request features
-(To be written)
+Time Lens is very much a side project, so requesting features is not guaranteed. However:
+- if your request makes sense
+- enough people make the same request
+- it's not too large of an effort to implement
+
+I will consider it.
 
 ## How to log issues
-(To be written)
+Please use Github Issues to submit issues. Please be as descriptive as possible with:
+- your OS and OS version
+- your Blender version
+- steps to reproduce
+- expected behavior
+- current behavior
+- workaround if any
 
 ## Licence
-(To be added later, but it will be as permissive as possible)
+
+This project is released under **CC0 1.0 Universal**. See [LICENSE](./LICENSE) for details.
